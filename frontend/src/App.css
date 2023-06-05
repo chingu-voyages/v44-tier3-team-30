@@ -1,0 +1,39 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1px;
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+}
+
+.header a {
+  text-decoration: none;
+  color: white;
+}
+
+.header img {
+  height: 62px;
+  padding: 10px;
+}
+
+.header h1 {
+  position: absolute;
+  left: 90px;
+  color: white;
+  font-size: 30px;
+}
+
+.nav-items {
+  display: flex;
+  list-style: none;
+
+}
+
+.nav-items li {
+  padding-right: 10px;
+}
