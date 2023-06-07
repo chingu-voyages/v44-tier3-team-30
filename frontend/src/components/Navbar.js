@@ -2,13 +2,29 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from 'react'
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { authActions } from "../redux/store";
 
 const Navbar = () => {
      // global state
      let isLogin = useSelector((state) => state.isLogin);
-     console.log(isLogin)
+     isLogin = isLogin || localStorage.getItem("userId");
+     const dispatch = useDispatch();
+     const navigate = useNavigate();
     //state
     const [value, setValue] = useState()
+
+     //logout
+    const handleLogout = () => {
+        try {
+        dispatch(authActions.logout());
+        alert("Logout Successfully");
+        navigate("/login");
+        localStorage.clear();
+        } catch (error) {
+        console.log(error);
+        }
+    };
 
   return (
     <>
@@ -29,15 +45,15 @@ const Navbar = () => {
             <button>Home</button>
           </Link>
           
-          <li>
-            <a href="/">Create Blog</a>
-          </li>
+          <Link to="/create-blog">
+            <button>Create Blog</button>
+          </Link>
 
             <Link to="/blog">
             <button>All Blogs</button>
           </Link>
 
-          <Link to="/">
+          <Link to="/my-blogs">
             <button>My Blogs</button>
           </Link>
           
@@ -57,7 +73,7 @@ const Navbar = () => {
         )}
         {isLogin &&(
             <Link to="/login">
-            <button>Logout</button>
+            <button onClick={handleLogout}>Logout</button>
           </Link>
         )}
         </ul>

@@ -31,6 +31,7 @@ const Login = () => {
           password: inputs.password,
         });
         if (data.success) {
+          // Local storage to store id of the user when logging in
           localStorage.setItem("userId", data?.user._id);
           dispatch(authActions.login());
           alert('Successfully Logged In')
