@@ -371,3 +371,23 @@ body {
   }
 
   /* ************************************************************************************************************************************************************** */
+
+
+  .create-blog-box{
+	width: 50%;
+	border: 3px solid black;
+	padding: 3px;
+	margin: auto;
+	box-shadow: 10px 10px 20px #ccc;
+	display: flex;
+	flex-direction: column;
+	margin-top: 30px;
+  }
+
+
+	.create-blog-box h2{
+		text-align: center;
+		font-weight: bold;
+		padding: 3px;
+		color: grey;
+	}
