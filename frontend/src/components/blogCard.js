@@ -1,31 +1,42 @@
-import React from 'react'
+import React, {useContext} from "react";
+import {Link} from 'react-router-dom'
+import { BlogContext } from "../context/BlogContext";
 
-const blogCard = (props) => {
+const BlogCard = (props) => {
+  const { title, description, image, username, time, id, isUser } = props;
+  const { setSelectedBlog } = useContext(BlogContext);
 
-    const { title, description, image, username, time, id, isUser } = props;
+  const handleClick = (id) => {
+    setSelectedBlog(id);
+  };
 
   return (
     <div>
-        <div class="ag-format-container">
-  <div class="ag-courses_box">
-    <div class="ag-courses_item">
-      <a href="#" class="ag-courses-item_link">
-        <div class="ag-courses-item_bg"></div>
+      <div class="ag-format-container">
+        <div class="ag-courses_box">
+          <div class="ag-courses_item">
+           
+            <div class="ag-courses-item_link">
+              <div class="ag-courses-item_bg"></div>
 
-        <div class="ag-courses-item_title">{title}</div>
+              <Link
+             to={`/description/${id}`}
+               onClick={() => handleClick(id)}
+                  >
+              <div class="ag-courses-item_title">{title}</div>
+              </Link>
 
-        <div class="ag-courses-item_author">
-          Author : <div className="ag-courses-item_date">{username}</div> 
+              <div class="ag-courses-item_author">
+                Author : <div className="ag-courses-item_date">{username}</div>
+              </div>
+            </div>
+            
+          </div>
         </div>
-        {/* <div class="ag-courses-item_date-box">
-          Published :<span class="ag-courses-item_date">{time}</span>
-        </div> */}
-      </a>
+      </div>
+      ;
     </div>
-  </div>
-</div>;
-    </div>
-  )
-}
+  );
+};
 
-export default blogCard
+export default BlogCard;
