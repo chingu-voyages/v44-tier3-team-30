@@ -75,7 +75,7 @@ const Login = () => {
                 />
               </div>
               <button class="button login__submit" >
-                <span class="button__text" >Log In Now</span>
+                <span class="button__text" >Log In</span>
                 <i class="button__icon fas fa-chevron-right"></i>
               </button>
             </form>
@@ -83,7 +83,7 @@ const Login = () => {
               <h3>Not A User?</h3>
               <div class="social-icons">
                 <button onClick={() => navigate("/")} class="social-login__icon">
-                  Register Now!
+                  Register
                 </button>
               </div>
             </div>

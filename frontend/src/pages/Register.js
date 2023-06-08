@@ -49,7 +49,7 @@ console.log(inputs)
             <form class="login">
               <div class="login__field">
                 <i class="login__icon fas fa-user"></i>
-                <input
+                <input className="register-placeholder"
                   name="name"
                   type="text"
                   class="login__input"
@@ -61,6 +61,7 @@ console.log(inputs)
               <div class="login__field">
                 <i class="login__icon fas fa-user"></i>
                 <input
+                className="register-placeholder"
                   name="email"
                   type="text"
                   class="login__input"
@@ -72,6 +73,7 @@ console.log(inputs)
               <div class="login__field">
                 <i class="login__icon fas fa-lock"></i>
                 <input
+                className="register-placeholder"
                   name="password"
                   type="password"
                   class="login__input"
@@ -81,7 +83,7 @@ console.log(inputs)
                 />
               </div>
               <button class="button login__submit">
-                <span class="button__text">Log In Now</span>
+                <span class="button__text">Sign Up</span>
                 <i class="button__icon fas fa-chevron-right"></i>
               </button>
             </form>

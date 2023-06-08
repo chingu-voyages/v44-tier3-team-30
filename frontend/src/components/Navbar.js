@@ -32,7 +32,7 @@ const Navbar = () => {
         {/* anchor tag for loading home page on clicking the image */}
         <a href="/">
           <img
-            src="https://cdn-icons-png.flaticon.com/512/4922/4922073.png"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM_h-W-TsconcAmiEmRRpN_fLsisxJYh0WVyl4d24uw6EnxWh3pj40ZT1N4YPiRPaUBpk&usqp=CAU"
             alt="logo"
           ></img>
         </a>

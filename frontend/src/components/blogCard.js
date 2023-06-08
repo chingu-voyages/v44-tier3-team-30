@@ -14,12 +14,12 @@ const blogCard = (props) => {
 
         <div class="ag-courses-item_title">{title}</div>
 
-        <div class="ag-courses-item_date-box">
-          Author :<span class="ag-courses-item_date">{description}</span>
+        <div class="ag-courses-item_author">
+          Author : <div className="ag-courses-item_date">{username}</div> 
         </div>
-        <div class="ag-courses-item_date-box">
+        {/* <div class="ag-courses-item_date-box">
           Published :<span class="ag-courses-item_date">{time}</span>
-        </div>
+        </div> */}
       </a>
     </div>
   </div>
