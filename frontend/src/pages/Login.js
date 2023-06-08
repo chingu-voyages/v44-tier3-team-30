@@ -75,14 +75,14 @@ const Login = () => {
                 />
               </div>
               <button class="button login__submit" >
-                <span class="button__text" >Log In</span>
+                <span class="button__text" onClick={() => navigate("/blogs")} >Log In</span>
                 <i class="button__icon fas fa-chevron-right"></i>
               </button>
             </form>
             <div class="social-login">
               <h3>Not A User?</h3>
               <div class="social-icons">
-                <button onClick={() => navigate("/")} class="social-login__icon">
+                <button onClick={() => navigate("/register")} class="social-login__icon">
                   Register
                 </button>
               </div>

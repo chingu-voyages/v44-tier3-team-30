@@ -7,8 +7,9 @@ import Register from './pages/Register';
 import Login from './pages/Login'
 import UserBlogs from './pages/UserBlogs'
 import CreateBlog from './pages/CreateBlog'
-import { BlogProvider } from './context/BlogContext';
+import { BlogProvider } from './pages/BlogContext';
 import Description from './pages/Description';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
     <BlogProvider>
     <Navbar/>
    <Routes>
-      <Route path="/" element={<Blogs/>}/>
+      <Route path="/" element={<HomePage/>}/>
       <Route path="/blogs" element={<Blogs/>}/>
       <Route path="/my-blogs" element={<UserBlogs/>}/>
       <Route path="/create-blog" element={<CreateBlog/>}/>

@@ -1,30 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from 'react'
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { authActions } from "../redux/store";
 
 const Navbar = () => {
-     // global state
-     let isLogin = useSelector((state) => state.isLogin);
-     isLogin = isLogin || localStorage.getItem("userId");
-     const dispatch = useDispatch();
-     const navigate = useNavigate();
-    //state
-    const [value, setValue] = useState()
+  // global state
+  let isLogin = useSelector((state) => state.isLogin);
+  isLogin = isLogin || localStorage.getItem("userId");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  //state
+  const [value, setValue] = useState();
 
-     //logout
-    const handleLogout = () => {
-        try {
-        dispatch(authActions.logout());
-        alert("Logout Successfully");
-        navigate("/login");
-        localStorage.clear();
-        } catch (error) {
-        console.log(error);
-        }
-    };
+  //logout
+  const handleLogout = () => {
+    try {
+      dispatch(authActions.logout());
+      alert("Logout Successfully");
+      navigate("/login");
+      localStorage.clear();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -38,44 +38,38 @@ const Navbar = () => {
         </a>
         <h1>My Blog App</h1>
         <ul className="nav-items">
-        {isLogin && (
-            <div value={value}
-                onChange={(e, val) => setValue(val)}>
-            <Link to="/">
-            <button>Home</button>
-          </Link>
-          
-          <Link to="/create-blog">
-            <button>Create Blog</button>
-          </Link>
+          {isLogin && (
+            <div value={value} onChange={(e, val) => setValue(val)} className="after-login-buttons">
+              <Link to="/create-blog">
+                <button className="navbar-btn">Create Blog</button>
+              </Link>
 
-            <Link to="/blog">
-            <button>All Blogs</button>
-          </Link>
+              <Link to="/blog">
+                <button className="navbar-btn">All Blogs</button>
+              </Link>
 
-          <Link to="/my-blogs">
-            <button>My Blogs</button>
-          </Link>
-          
+              <Link to="/my-blogs">
+                <button className="navbar-btn">My Blogs</button>
+              </Link>
             </div>
-        )}
-        {!isLogin &&(
-            <>
+          )}
+          {!isLogin && (
+            <div className="before-login-buttons">
             <Link to="/register">
-            <button>Register</button>
-          </Link>
-          <Link to="/login">
-            <button>Login</button>
-          </Link>
-            
-          
-            </>
-        )}
-        {isLogin &&(
+                <button className="navbar-btn">Register</button>
+              </Link>
+              <Link to="/login">
+                <button className="navbar-btn">Login</button>
+              </Link>
+            </div>
+          )}
+          {isLogin && (
             <Link to="/login">
-            <button onClick={handleLogout}>Logout</button>
-          </Link>
-        )}
+              <button className="navbar-btn" onClick={handleLogout}>
+                Logout
+              </button>
+            </Link>
+          )}
         </ul>
       </div>
     </>

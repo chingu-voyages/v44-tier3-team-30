@@ -83,16 +83,19 @@ console.log(inputs)
                 />
               </div>
               <button class="button login__submit">
-                <span class="button__text">Sign Up</span>
+                <button class="button__text" onClick={() => navigate("/login")} >Sign Up</button>
                 <i class="button__icon fas fa-chevron-right"></i>
               </button>
             </form>
             <div class="social-login">
               <h3>Already A User?</h3>
               <div class="social-icons">
-                <a href="#" class="social-login__icon">
+              
+              <button onClick={() => navigate("/login")} class="social-login__icon" >
                   Login
-                </a>
+                </button>
+             
+                
               </div>
             </div>
           </div>

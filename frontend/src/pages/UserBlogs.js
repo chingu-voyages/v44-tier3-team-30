@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import BlogCard from "../components/BlogCard";
+import Blogs from "./Blogs";
+
+
 const UserBlogs = () => {
   const [blogs, setBlogs] = useState([]);
 
@@ -20,6 +23,8 @@ const UserBlogs = () => {
   useEffect(() => {
     getUserBlogs();
   }, []);
+
+
   console.log(blogs);
   return (
     <div>

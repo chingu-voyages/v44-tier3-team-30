@@ -35,7 +35,29 @@
 .nav-items {
   display: flex;
   list-style: none;
+  justify-content: space-between;
+}
 
+.after-login-buttons{
+	position: absolute;
+	left: 560px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 400px;
+
+}
+
+.before-login-buttons{
+	position: absolute;
+	right: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 200px;
+	align-items: center;
+	top: 20px;
+	text-align: center;
 }
 
 .nav-items li {
@@ -50,6 +72,8 @@
 	margin: 0;
 	padding: 0;	
 	font-family: Raleway, sans-serif;
+	scrollbar-color: rgb(42, 42, 39) black;
+	scrollbar-width: thin;
 }
 
 body {
@@ -398,23 +422,71 @@ body {
 
 
   .create-blog-box{
+	align-items: center;
 	width: 50%;
+	height: 600px;
 	border: 3px solid black;
 	padding: 3px;
 	margin: auto;
 	box-shadow: 10px 10px 20px #ccc;
 	display: flex;
 	flex-direction: column;
-	margin-top: 30px;
+	margin-top: 100px;
+  }
+
+  .create-blog-box input{
+	width: 700px;
+  }
+
+  .create-blog-box-desc-input{
+	height: 300px;;
   }
 
 
 	.create-blog-box h2{
+		margin-top: 30px;
 		text-align: center;
 		font-weight: bold;
+		font-size: xx-large;
 		padding: 3px;
-		color: grey;
+		color: rgb(244, 238, 238);
 	}
+
+	.create-blog-box h3{
+		margin-top: 40px;
+		margin-bottom: 10px;
+		font: larger;
+		color: white;
+	}
+
+	.create-blog-btn{
+		
+			background: #27d9cd;
+			background-image: -webkit-linear-gradient(top, #27d9cd, #0c42cc);
+			background-image: -moz-linear-gradient(top, #27d9cd, #0c42cc);
+			background-image: -ms-linear-gradient(top, #27d9cd, #0c42cc);
+			background-image: -o-linear-gradient(top, #27d9cd, #0c42cc);
+			background-image: linear-gradient(to bottom, #27d9cd, #0c42cc);
+			-webkit-border-radius: 28;
+			-moz-border-radius: 28;
+			border-radius: 28px;
+			font-family: Arial;
+			color: #ffffff;
+			font-size: 20px;
+			padding: 10px 20px 10px 20px;
+			text-decoration: none;
+		  cursor: pointer;
+		  
+		  
+		margin-top: 20px;
+	}
+
+	.create-blog-btn:hover{
+		background: #1b52b8;
+		text-decoration: none;
+	  }
+
+
 
 
 	.blogs-container{
@@ -425,3 +497,84 @@ body {
 		margin-right: 200px;
 		margin-top: 90px;
 	}
+
+
+	/* Description styles */
+.description-container {
+	background-image: radial-gradient(circle, #112a4f, #184975, #196b9a, #1590bf, #14b6e2);
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+  }
+
+  .HomePage-container{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: radial-gradient(circle, #112a4f, #184975, #196b9a, #1590bf, #14b6e2);
+  }
+  
+
+  .hp-gif{
+	position: relative;
+	top: 300px;
+  }
+  
+  .blog-description-title {
+	position: absolute;
+	top: 100px;
+	left: 500px;
+	justify-content: center;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 400;
+	align-items: center;
+	color: rgb(19, 17, 17);
+  }
+  
+  .blog-description {
+	position: absolute;
+	top: 230px;
+	left: 500px;
+   width: 500px;
+	/* transform: translate(-50%, -50%); */
+	justify-content: center;
+	text-align: center;
+	color: rgb(11, 8, 8);
+	margin-top: 2px;
+  }
+
+  /* className="navbar-btn" */
+
+  .navbar-btn {
+	background: #3498db;
+	background-image: -webkit-linear-gradient(top, #074670, #2980b9);
+	background-image: -moz-linear-gradient(top, #074670, #2980b9);
+	background-image: -ms-linear-gradient(top, #074670, #2980b9);
+	background-image: -o-linear-gradient(top, #074670, #2980b9);
+	background-image: linear-gradient(to bottom, #074670, #2980b9);
+	-webkit-border-radius: 28;
+	-moz-border-radius: 28;
+	border-radius: 28px;
+	border: 1px solid rgb(245, 245, 249);
+	font-family: Arial;
+color: #ffffff;
+font-size: 12px;
+padding: 6px 17px 5px 17px;
+margin-left: 5px;
+
+	text-decoration: none;
+  }
+  
+  .navbar-btn:hover {
+	background: #3cb0fd;
+	background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+	text-decoration: none;
+  }

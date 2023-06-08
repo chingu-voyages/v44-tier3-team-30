@@ -46,11 +46,11 @@ const CreateBlog = () => {
           >
             Create A Post
           </h2>
-          <div
+          <h3
             sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}
           >
             Title
-          </div>
+          </h3>
           <input
           type="text"
             name="title"
@@ -58,12 +58,13 @@ const CreateBlog = () => {
             onChange={handleChange}
             required
           />
-          <div
+          <h3
             sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}
           >
             Description
-          </div>
+          </h3>
           <input
+          className="create-blog-box-desc-input"
             type="text"
             name="description"
             value={inputs.description}
@@ -72,11 +73,11 @@ const CreateBlog = () => {
             variant="outlined"
             required
           />
-          <div
+          <h3
             sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}
           >
             Image URL
-          </div>
+          </h3>
           <input type="text"
             name="image"
             value={inputs.image}
@@ -84,7 +85,7 @@ const CreateBlog = () => {
             
             required
           />
-          <button type="submit" color="primary" variant="contained">
+          <button type="submit" color="primary" variant="contained" className="create-blog-btn">
             SUBMIT
           </button>
         </div>

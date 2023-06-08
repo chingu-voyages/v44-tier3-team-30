@@ -1,14 +1,19 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {Link} from 'react-router-dom'
-import { BlogContext } from "../context/BlogContext";
+import { BlogContext } from "../pages/BlogContext";
 
 const BlogCard = (props) => {
   const { title, description, image, username, time, id, isUser } = props;
+  const [blogs, setBlogs] = useState([]);
   const { setSelectedBlog } = useContext(BlogContext);
 
-  const handleClick = (id) => {
-    setSelectedBlog(id);
+  const handleClick = (props) => {
+    setSelectedBlog(props);
   };
+
+  useEffect(() => {
+    setBlogs(props);
+  }, []);
 
   return (
     <div>
@@ -21,7 +26,7 @@ const BlogCard = (props) => {
 
               <Link
              to={`/description/${id}`}
-               onClick={() => handleClick(id)}
+               onClick={() => handleClick(props)}
                   >
               <div class="ag-courses-item_title">{title}</div>
               </Link>
