@@ -44,7 +44,7 @@ const Navbar = () => {
                 <button className="navbar-btn">Create Blog</button>
               </Link>
 
-              <Link to="/blog">
+              <Link to="/blogs">
                 <button className="navbar-btn">All Blogs</button>
               </Link>
 

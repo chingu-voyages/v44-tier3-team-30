@@ -75,7 +75,7 @@ const Login = () => {
                 />
               </div>
               <button class="button login__submit" >
-                <span class="button__text" onClick={() => navigate("/blogs")} >Log In</span>
+                <span class="button__text" >Log In</span>
                 <i class="button__icon fas fa-chevron-right"></i>
               </button>
             </form>
