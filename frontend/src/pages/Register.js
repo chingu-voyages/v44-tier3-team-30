@@ -30,7 +30,7 @@ const Register = () => {
         password: inputs.password,
       });
       if (data.success) {
-        alert("User Register Successfully");
+        alert("User Registered Successfully");
         navigate("/login");
       }
     } catch (error) {
@@ -83,7 +83,7 @@ console.log(inputs)
                 />
               </div>
               <button class="button login__submit">
-                <button class="button__text" onClick={() => navigate("/login")} >Sign Up</button>
+                <button class="button__text" >Sign Up</button>
                 <i class="button__icon fas fa-chevron-right"></i>
               </button>
             </form>

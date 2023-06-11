@@ -2,11 +2,10 @@ const mongoose = require("mongoose");
 const blogModel = require("../models/blogModel");
 const userModel = require("../models/userModel");
 
-// GET ALL BLOGS
+//GET ALL BLOGS
 exports.getAllBlogsController = async (req, res) => {
   try {
-    const {user} = req.body;
-    const blogs = await blogModel.find({}).populate(user);
+    const blogs = await blogModel.find({}).populate("user");
     if (!blogs) {
       return res.status(200).send({
         success: false,
@@ -16,45 +15,46 @@ exports.getAllBlogsController = async (req, res) => {
     return res.status(200).send({
       success: true,
       BlogCount: blogs.length,
+      message: "All Blogs lists",
       blogs,
     });
   } catch (error) {
     console.log(error);
     return res.status(500).send({
       success: false,
-      message: "Error While Fetching Blogs",
+      message: "Error WHile Getting Blogs",
       error,
     });
   }
 };
 
-// CREATE BLOG
+//Create Blog
 exports.createBlogController = async (req, res) => {
   try {
     const { title, description, image, user } = req.body;
     //validation
-    if (!title || !description || !image) {
+    if (!title || !description || !image || !user) {
       return res.status(400).send({
         success: false,
         message: "Please Provide ALl Fields",
       });
     }
-      const exisitingUser = await userModel.findById(user);
-      //validaton
-      if (!exisitingUser) {
-        return res.status(404).send({
-          success: false,
-          message: "unable to find user",
-        });
-      }
+    const exisitingUser = await userModel.findById(user);
+    //validaton
+    if (!exisitingUser) {
+      return res.status(404).send({
+        success: false,
+        message: "unable to find user",
+      });
+    }
 
-    const newBlog = new blogModel({ title, description, image });
-      const session = await mongoose.startSession();
-      session.startTransaction();
-      await newBlog.save({ session });
-      exisitingUser.blogs.push(newBlog);
-      await exisitingUser.save({ session });
-     await session.commitTransaction();
+    const newBlog = new blogModel({ title, description, image, user });
+    const session = await mongoose.startSession();
+    session.startTransaction();
+    await newBlog.save({ session });
+    exisitingUser.blogs.push(newBlog);
+    await exisitingUser.save({ session });
+    await session.commitTransaction();
     await newBlog.save();
     return res.status(201).send({
       success: true,
@@ -65,13 +65,13 @@ exports.createBlogController = async (req, res) => {
     console.log(error);
     return res.status(400).send({
       success: false,
-      message: "Error While Creating Blog",
+      message: "Error WHile Creting blog",
       error,
     });
   }
 };
 
-// UPDATE SPECIFIC BLOG
+//Update Blog
 exports.updateBlogController = async (req, res) => {
   try {
     const { id } = req.params;
@@ -90,13 +90,13 @@ exports.updateBlogController = async (req, res) => {
     console.log(error);
     return res.status(400).send({
       success: false,
-      message: "Error While Updating Blog",
+      message: "Error WHile Updating Blog",
       error,
     });
   }
 };
 
-// GET SPECIFIC BLOG
+//SIngle Blog
 exports.getBlogByIdController = async (req, res) => {
   try {
     const { id } = req.params;
@@ -104,29 +104,31 @@ exports.getBlogByIdController = async (req, res) => {
     if (!blog) {
       return res.status(404).send({
         success: false,
-        message: "Blog not found with thid ID",
+        message: "blog not found with this is",
       });
     }
     return res.status(200).send({
       success: true,
-      message: "Fetched Specific Blog",
+      message: "fetch single blog",
       blog,
     });
   } catch (error) {
     console.log(error);
     return res.status(400).send({
       success: false,
-      message: "Error while fetching specific blog",
+      message: "error while getting single blog",
       error,
     });
   }
 };
 
-// DELETE SPECIFIC BLOG
+//Delete Blog
 exports.deleteBlogController = async (req, res) => {
   try {
-    const blog = await blogModel.findOneAndDelete(req.params.id).populate(user);
-    // That specific blog removed from array of blogs
+    const blog = await blogModel
+      // .findOneAndDelete(req.params.id)
+      .findByIdAndDelete(req.params.id)
+      .populate("user");
     await blog.user.blogs.pull(blog);
     await blog.user.save();
     return res.status(200).send({
@@ -137,7 +139,7 @@ exports.deleteBlogController = async (req, res) => {
     console.log(error);
     return res.status(400).send({
       success: false,
-      message: "Error While Deleting Blog",
+      message: "Erorr WHile Deleteing BLog",
       error,
     });
   }
@@ -145,26 +147,26 @@ exports.deleteBlogController = async (req, res) => {
 
 //GET USER BLOG
 exports.userBlogControlller = async (req, res) => {
-    try {
-      const userBlog = await userModel.findById(req.params.id).populate("blogs");
+  try {
+    const userBlog = await userModel.findById(req.params.id).populate("blogs");
 
-      if (!userBlog) {
-        return res.status(404).send({
-          success: false,
-          message: "No Blogs found with this ID",
-        });
-      }
-      return res.status(200).send({
-        success: true,
-        message: "User Blogs",
-        userBlog,
-      });
-    } catch (error) {
-      console.log(error);
-      return res.status(400).send({
+    if (!userBlog) {
+      return res.status(404).send({
         success: false,
-        message: "Error in User Blog",
-        error,
+        message: "blogs not found with this id",
       });
     }
-  };
+    return res.status(200).send({
+      success: true,
+      message: "user blogs",
+      userBlog,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(400).send({
+      success: false,
+      message: "error in user blog",
+      error,
+    });
+  }
+};

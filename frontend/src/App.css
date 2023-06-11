@@ -74,6 +74,7 @@
 	font-family: Raleway, sans-serif;
 	scrollbar-color: rgb(42, 42, 39) black;
 	scrollbar-width: thin;
+	text-decoration: none;
 }
 
 body {
@@ -271,7 +272,7 @@ body {
 
 /* ************************************************************BLOG CARD********************************************************************************* */
 .ag-format-container {
-	width: 1142px;
+width: 1142px;
 	margin: 0 auto;
   }
   
@@ -279,6 +280,8 @@ body {
   /* body {
 	background-color: #000;
   } */
+
+
   .ag-courses_box {
 	width: 1800px;
 	display: -webkit-box;
@@ -289,7 +292,7 @@ body {
 	align-items: flex-start;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
-  
+	height: max-content;
 	padding: 50px 0;
   }
   .ag-courses_item {
@@ -297,30 +300,17 @@ body {
 	flex-basis: calc(33.33333% - 30px);
   
 	margin: 0 15px 30px;
-  
-	overflow: hidden;
-  
+	height: max-content;
 	border-radius: 28px;
   }
   .ag-courses-item_link {
-	display: block;
 	padding: 30px 20px;
-	background-color: #121212;
+	background-color: #171414;
 	text-decoration: none;
-	overflow: hidden;
-  
+    height: fit-content;
 	position: relative;
   }
-  .ag-courses-item_link:hover,
-  .ag-courses-item_link:hover .ag-courses-item_date {
-	text-decoration: none;
-	color: #FFF;
-  }
-  .ag-courses-item_link:hover .ag-courses-item_bg {
-	-webkit-transform: scale(10);
-	-ms-transform: scale(10);
-	transform: scale(10);
-  }
+ 
   .ag-courses-item_title {
 	min-height: 87px;
 	margin: 0 0 25px;
@@ -337,19 +327,17 @@ body {
   .ag-courses-item_author {
 	font-size: 18px;
 	color: #FFF;
-	
+	padding: 3px;
 	z-index: 2;
-	position: relative;
+	position: absolute;
+	width: 200px;
+	position: absolute;
+	bottom: 10px;
   }
-  .ag-courses-item_date {
-	font-weight: bold;
-	color: #0ed7da;
-  
-	-webkit-transition: color .5s ease;
-	-o-transition: color .5s ease;
-	transition: color .5s ease
-  }
-  .ag-courses-item_bg {
+
+
+
+  /* .ag-courses-item_bg {
 	height: 128px;
 	width: 128px;
 	background-color: #f9b234;
@@ -379,7 +367,7 @@ body {
   }
   .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
 	background-color: #4c49ea;
-  }
+  } */
   
   
   
@@ -577,4 +565,70 @@ margin-left: 5px;
 	background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
 	background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
 	text-decoration: none;
+  }
+
+  .update-delete {
+	position: inherit;
+left: 494px;
+top: 24px;
+margin-right: 10px;
+height: 50px;
+width: 90px;
+display: flex;
+justify-content: space-between;
+  }
+
+  .update-btn{
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+  }
+
+  .delete-btn{
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+  }
+
+  .blogcard-img{
+	height: 122px;
+width: 123px;
+position: absolute;
+right: 34px;
+margin: 3px;
+top: 29px;
+  }
+
+  .blogcard-description{
+	color: aqua;
+position: absolute;
+top: 72px;
+width: 300px;
+height: max-content;
+  }
+
+
+  .MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-iq5n7i-MuiPaper-root-MuiCard-root{
+	background-color: #0f0d0d;
+	color: rgba(225, 236, 234, 0.87);
+	-webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+	transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+	border-radius: 4px;
+	box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+	overflow: hidden;
+	width: 40%;
+	margin: auto;
+	  margin-top: auto;
+	margin-top: 16px;
+	padding: 16px;
+	box-shadow: 5px 5px 10px #111010;
+  }
+  
+
+  .card-component{
+	background-color: rgb(27, 27, 24);
+	position: absolute;
+	top: 100px;
+	left: 460px;
+
   }

@@ -74,7 +74,7 @@ const Login = () => {
                   onChange={handleChange}
                 />
               </div>
-              <button class="button login__submit" >
+              <button class="button login__submit" onClick={handleSubmit} >
                 <span class="button__text" >Log In</span>
                 <i class="button__icon fas fa-chevron-right"></i>
               </button>

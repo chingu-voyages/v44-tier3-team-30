@@ -27,21 +27,21 @@ const UserBlogs = () => {
 
   console.log(blogs);
   return (
-    <div>
+    <div className="blogs-container">
       {blogs && blogs.length > 0 ? (
         blogs.map((blog) => (
-          <BlogCard
+          <BlogCard 
             id={blog._id}
             isUser={true}
             title={blog.title}
             description={blog.description}
             image={blog.image}
-            username={blog.username}
+            username={blog?.user?.username}
             time={blog.createdAt}
           />
         ))
       ) : (
-        <h1>You Havent Created a blog</h1>
+        <h1>Create a New Blog!</h1>
       )}
     </div>
   );
