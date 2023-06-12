@@ -53,7 +53,8 @@ export default function BlogCard({
           </IconButton>
         </Box>
       )}
-      <CardHeader
+      <div className="cardheader">
+      <CardHeader 
         avatar={
           <Avatar sx={{ bgcolor: teal[500] }} aria-label="recipe">
             {username}
@@ -62,6 +63,8 @@ export default function BlogCard({
         title={username}
         subheader={time}
       />
+      </div>
+      
       <CardMedia component="img" height="194" image={image} alt="Paella dish" />
       <CardContent>
         <Typography variant="h4" color="black" >
