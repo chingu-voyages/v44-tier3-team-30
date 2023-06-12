@@ -24,7 +24,6 @@ function App() {
       <Route path='/description/:id' element={<Description/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/register" element={<Register/>}/>
-      {/* <Route path="/create-blog" element={<createNewBlog/>}/> */}
     </Routes>
     </BlogProvider>
    </>

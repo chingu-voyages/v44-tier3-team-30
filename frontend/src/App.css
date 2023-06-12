@@ -479,11 +479,11 @@ width: 1142px;
 
 	.blogs-container{
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		margin-left: 420px;
-		margin-right: 200px;
-		margin-top: 90px;
+flex-direction: column;
+justify-content: center;
+margin-left: 200px;
+margin-right: 200px;
+margin-top: 90px;
 	}
 
 
@@ -590,40 +590,10 @@ justify-content: space-between;
 	border-radius: 50%;
   }
 
-  .blogcard-img{
-	height: 122px;
-width: 123px;
-position: absolute;
-right: 34px;
-margin: 3px;
-top: 29px;
-  }
-
-  .blogcard-description{
-	color: aqua;
-position: absolute;
-top: 72px;
-width: 300px;
-height: max-content;
-  }
 
 
-  .MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-iq5n7i-MuiPaper-root-MuiCard-root{
-	background-color: #0f0d0d;
-	color: rgba(225, 236, 234, 0.87);
-	-webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-	transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-	border-radius: 4px;
-	box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
-	overflow: hidden;
-	width: 40%;
-	margin: auto;
-	  margin-top: auto;
-	margin-top: 16px;
-	padding: 16px;
-	box-shadow: 5px 5px 10px #111010;
-  }
-  
+
+    
 
   .card-component{
 	background-color: rgb(27, 27, 24);
@@ -632,3 +602,5 @@ height: max-content;
 	left: 460px;
 
   }
+
+

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import BlogCard from "../components/BlogCard";
-import Blogs from "./Blogs";
 
 
 const UserBlogs = () => {
@@ -30,13 +29,13 @@ const UserBlogs = () => {
     <div className="blogs-container">
       {blogs && blogs.length > 0 ? (
         blogs.map((blog) => (
-          <BlogCard 
+          <BlogCard
             id={blog._id}
             isUser={true}
             title={blog.title}
             description={blog.description}
             image={blog.image}
-            username={blog?.user?.username}
+            username={blog.username}
             time={blog.createdAt}
           />
         ))
