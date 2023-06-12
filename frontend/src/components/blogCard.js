@@ -16,7 +16,7 @@ export default function BlogCard({
   const navigate = useNavigate();
 
   const handleEdit = () => {
-    navigate(`/blog-details/${id}`);
+    navigate(`/description/${id}`);
   };
 
   const handleDelete = async () => {
@@ -71,6 +71,13 @@ export default function BlogCard({
            {description}
         </Typography>
       </CardContent>
+      {isUser && (
+               <div className="update-delete">
+               <button onClick={handleEdit}><img  className="update-btn" src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-edit-icon-png-image_313587.jpg"></img></button>
+            <button onClick={handleDelete}><img className="delete-btn" src="https://t4.ftcdn.net/jpg/03/46/38/39/360_F_346383913_JQecl2DhpHy2YakDz1t3h0Tk3Ov8hikq.jpg"></img></button>
+
+            </div>
+             )}
     </Card>
   );
 }
